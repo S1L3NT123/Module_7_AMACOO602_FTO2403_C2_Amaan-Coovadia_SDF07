@@ -1,23 +1,140 @@
 /* Base Styles */
 
 :root {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #262626;
+  padding-bottom: 3rem;
 }
 
 img {
-    display: block;
+  display: block;
+  object-fit: cover;
+}
+
+.btn {
+  /* outline: 0.5rem #595959; */
+
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.btn:focus {
+  outline: 0.5rem auto #4d90fe;
+}
+
+.profile {
+  padding: 6rem 0;
+}
+
+.profile::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile-image {
+  float: left;
+  width: calc(35%-1rem);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* object-fit: fill; */
+}
+
+.profile-image img {
+  border-radius: 50%;
+}
+
+.profile-user-settings,
+.profile-stats,
+.profile-bio
+ {
+  float: left;
+  width: calc(66%-2rem);
+}
+
+.profile-user-settings{
+  margin-top: 1.1rem;
+}
+
+.profile-user-name {
+  display: inline-block;
+  margin-right: 2vh;
+  font-size: large;
+  font-weight: 100;
+}
+
+.profile-edidt-btn {
+  /* background: none;
+  border: none; */
+  font-size: smaller;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: 0.1rem solid #616161; /* border not working */
+  border-radius: 0.3rem;
+}
+
+.profile-settings-btn {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  border: 0.1rem solid #616161;
+  border-radius: 0.3rem;
+}
+
+.profile-stats li {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-right: 4rem;
+  cursor: pointer;
+}
+
+.profile-bio {
+  font-size: small;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50vh, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-image {
+  width: 50vh;
+  height: 50vh;
+  object-fit: fill;
+}
+
+.gallery-item-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-info {
+  opacity: 1;
 }
